@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.artharyoung.game.fmj.MainActivity">
+    
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <LinearLayout
+        android:id="@+id/game_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <com.artharyoung.game.fmj.GameView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp">
+
+            <android.support.v4.widget.Space
+                android:id="@+id/control_center"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"/>
+
+            <ImageButton
+                android:id="@+id/game_up"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@id/control_center"
+                android:layout_alignLeft="@id/control_center"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_key_up"/>
+
+            <ImageButton
+                android:id="@+id/game_down"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignLeft="@id/control_center"
+                android:layout_below="@id/control_center"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_key_down"/>
+
+            <ImageButton
+                android:id="@+id/game_left"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignTop="@id/control_center"
+                android:layout_toLeftOf="@id/control_center"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_key_left"/>
+
+            <ImageButton
+                android:id="@+id/game_right"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignTop="@id/control_center"
+                android:layout_toRightOf="@id/control_center"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_key_right"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp">
+
+            <android.support.v4.widget.Space
+                android:id="@+id/fun_center"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"/>
+
+            <ImageButton
+                android:id="@+id/game_enter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignTop="@id/fun_center"
+                android:layout_toLeftOf="@id/fun_center"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_key_enter"/>
+
+            <ImageButton
+                android:id="@+id/game_cancel"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignTop="@id/fun_center"
+                android:layout_toRightOf="@id/fun_center"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_key_cancel"/>
+
+            <ImageButton
+                android:id="@+id/game_page_up"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@id/fun_center"
+                android:layout_alignLeft="@id/fun_center"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_key_page_up"/>
+
+            <ImageButton
+                android:id="@+id/game_page_down"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignLeft="@id/fun_center"
+                android:layout_below="@id/fun_center"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/game_key_page_down"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>
