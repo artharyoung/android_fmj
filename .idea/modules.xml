@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/androidfmj.iml" filepath="$PROJECT_DIR$/androidfmj.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android_fmj.iml" filepath="$PROJECT_DIR$/.idea/modules/android_fmj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android_fmj.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android_fmj.app.iml" />
     </modules>
   </component>
 </project>

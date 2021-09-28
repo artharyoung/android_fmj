@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context="com.artharyoung.game.fmj.MainActivity">
     
-    <android.support.v4.widget.Space
+    <Space
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
 
@@ -35,7 +35,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="16dp">
 
-            <android.support.v4.widget.Space
+            <Space
                 android:id="@+id/control_center"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -89,7 +89,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="16dp">
 
-            <android.support.v4.widget.Space
+            <Space
                 android:id="@+id/fun_center"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
