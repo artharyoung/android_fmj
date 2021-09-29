@@ -1,6 +1,7 @@
 package com.artharyoung.game.fmj;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,9 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-
+import com.artharyoung.game.fmj.display.GameActivity;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -34,6 +36,13 @@ public class MainActivity extends Activity implements View.OnTouchListener ,View
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
+
+        Button btn = findViewById(R.id.btn_test);
+        btn.setOnClickListener(v -> {
+
+            startActivity(new Intent(this, GameActivity.class));
+            finish();
+        });
 
         ViewGroup gameDisplay = (ViewGroup)findViewById(R.id.game_show);
 

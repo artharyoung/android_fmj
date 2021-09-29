@@ -8,8 +8,8 @@ public class Global {
 	public static int COLOR_BLACK = Color.argb(255, 0, 0, 0);
 	public static int COLOR_TRANSP = Color.argb(0, 0, 0, 0);
 
-	public static final int SCREEN_WIDTH = 159;//游戏实际像素宽
-	public static final int SCREEN_HEIGHT = 96;//游戏实际像素高
+	public static final int SCREEN_WIDTH = 159;//游戏实际像素宽 159  160
+	public static final int SCREEN_HEIGHT = 96;//游戏实际像素高 96   106
 	
 	
 	public static final int MAP_LEFT_OFFSET = 8;

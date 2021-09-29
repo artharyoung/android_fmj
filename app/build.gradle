@@ -1,14 +1,20 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.artharyoung.game.fmj"
-        minSdkVersion 15
-        targetSdkVersion 31
+        minSdkVersion 21
+        targetSdkVersion 30
+
         versionCode 1
         versionName "1.0"
+        flavorDimensions "1"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -17,9 +23,52 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res/values-v21', 'src/main/res/values-v19']
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['libs']
+        }
+
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    //自定义导出apk名称
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            boolean isRelease = variant.buildType.name.contains("release")
+            outputFileName = "fmj-${variant.versionName}-${variant.versionCode}-${apkTime(isRelease)}.apk".toLowerCase()
+        }
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+static def apkTime(boolean isRelease) {
+    return isRelease ? "" : "-" + new Date().format("MMdd-HHmm")
 }
 
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //https://developer.android.google.cn/kotlin/ktx
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
+
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+
+    //https://github.com/Kotlin/kotlinx.coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <!--这个比例是固定比例-->
+  <com.artharyoung.game.fmj.display.DisplayView
+    android:id="@+id/display_view"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintDimensionRatio="159:96"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <RelativeLayout
+    android:id="@+id/relativeLayout"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginBottom="24dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <Space
+      android:id="@+id/control_center"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_centerInParent="true" />
+
+    <ImageButton
+      android:id="@+id/game_up"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_above="@id/control_center"
+      android:layout_alignStart="@id/control_center"
+      android:contentDescription="@null"
+      android:scaleType="fitCenter"
+      android:src="@drawable/game_key_up" />
+
+    <ImageButton
+      android:id="@+id/game_down"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_below="@id/control_center"
+      android:layout_alignStart="@id/control_center"
+      android:contentDescription="@null"
+      android:scaleType="fitCenter"
+      android:src="@drawable/game_key_down" />
+
+    <ImageButton
+      android:id="@+id/game_left"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_alignTop="@id/control_center"
+      android:layout_toStartOf="@id/control_center"
+      android:contentDescription="@null"
+      android:scaleType="fitCenter"
+      android:src="@drawable/game_key_left" />
+
+    <ImageButton
+      android:id="@+id/game_right"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_alignTop="@id/control_center"
+      android:layout_toEndOf="@id/control_center"
+      android:contentDescription="@null"
+      android:scaleType="fitCenter"
+      android:src="@drawable/game_key_right" />
+  </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
